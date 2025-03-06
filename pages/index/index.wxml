@@ -1,0 +1,43 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 顶部日期显示 -->
+  <view class="header">
+    <text class="date-display">{{currentDate}}</text>
+  </view>
+
+  <!-- 过滤器 -->
+  <view class="filter">
+    <text class="{{filter === 'all' ? 'active' : ''}}" bindtap="setFilter" data-type="all">全部</text>
+    <text class="{{filter === 'active' ? 'active' : ''}}" bindtap="setFilter" data-type="active">未完成</text>
+    <text class="{{filter === 'completed' ? 'active' : ''}}" bindtap="setFilter" data-type="completed">已完成</text>
+  </view>
+
+  <!-- 待办列表 -->
+  <view class="todo-list">
+    <block wx:for="{{filteredTodos}}" wx:key="id">
+      <view class="todo-item">
+        <view class="todo-content" bindtap="goToDetail" data-id="{{item.id}}">
+          <checkbox checked="{{item.completed}}" catchtap="toggleTodo" data-id="{{item.id}}" />
+          <view class="todo-info">
+            <text class="todo-text {{item.completed ? 'completed' : ''}}">{{item.text}}</text>
+            <text class="todo-date" wx:if="{{item.dueDate}}">截止: {{item.dueDate}}</text>
+          </view>
+        </view>
+        <text class="delete-btn" bindtap="deleteTodo" data-id="{{item.id}}">🗑️</text>
+      </view>
+    </block>
+  </view>
+
+  <!-- 统计信息 -->
+  <view class="statistics">
+    <text>总计: {{todos.length}} | 已完成: {{completedCount}} | 未完成: {{activeCount}}</text>
+  </view>
+
+  <!-- 添加待办区域 -->
+  <view class="input-area">
+    <view class="input-row">
+      <input class="todo-input" placeholder="请输入待办事项" value="{{newTodo}}" bindinput="onInput" bindconfirm="addTodo"/>
+      <button class="add-btn" bindtap="addTodo">添加</button>
+    </view>
+  </view>
+</view>

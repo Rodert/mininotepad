@@ -1,0 +1,85 @@
+.container {
+  padding: 30rpx;
+  background: #f6f8fa;
+  min-height: 100vh;
+}
+
+.user-card {
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.avatar-container {
+  margin-right: 20rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  background: #f0f0f0;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.username {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.user-id {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+}
+
+.function-list {
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.1);
+}
+
+.function-item {
+  padding: 0 30rpx;
+}
+
+.function-content {
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.function-item:last-child .function-content {
+  border-bottom: none;
+}
+
+.function-text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.arrow {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.version-info {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 60rpx;
+}

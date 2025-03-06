@@ -1,0 +1,17 @@
+<view class="feedback-popup {{show ? 'show' : ''}}">
+  <view class="feedback-mask" bindtap="onClose"></view>
+  <view class="feedback-content">
+    <view class="feedback-title">反馈与帮助</view>
+    <view class="feedback-options">
+      <view class="feedback-item" bindtap="onTapCustomerService">
+        <text class="feedback-item-text">联系客服</text>
+        <text class="feedback-item-desc">点击进入小程序客服会话</text>
+      </view>
+      <view class="feedback-item" bindtap="onTapFeedbackInfo">
+        <text class="feedback-item-text">使用说明</text>
+        <text class="feedback-item-desc">了解更多使用帮助和反馈渠道</text>
+      </view>
+    </view>
+    <view class="feedback-close" bindtap="onClose">关闭</view>
+  </view>
+</view>

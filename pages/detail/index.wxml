@@ -1,0 +1,32 @@
+<view class="container">
+  <!-- 任务详情区域 -->
+  <view class="detail-section">
+    <view class="detail-title">任务详情</view>
+    <view class="todo-text">{{todo.text}}</view>
+    <view class="todo-info">
+      <text class="label">状态：</text>
+      <text>{{todo.completed ? '已完成' : '未完成'}}</text>
+    </view>
+    <view class="todo-info">
+      <text class="label">创建时间：</text>
+      <text>{{todo.createTime}}</text>
+    </view>
+  </view>
+
+  <!-- 备注区域 -->
+  <view class="note-section">
+    <view class="note-title">备注</view>
+    <textarea
+      class="note-input"
+      placeholder="添加备注..."
+      value="{{note}}"
+      bindinput="onNoteInput"
+    />
+  </view>
+
+  <!-- 底部按钮区域 -->
+  <view class="button-group">
+    <button class="save-btn" bindtap="saveNote">保存备注</button>
+    <button class="back-btn" bindtap="goBack">返回</button>
+  </view>
+</view>
