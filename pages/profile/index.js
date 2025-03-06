@@ -134,14 +134,9 @@ Page({
   onTapAbout() {
     wx.showModal({
       title: '关于方便记事本',
-      content: '方便记事本是一款简单易用的待办事项管理工具，帮助您随时记录和管理日常任务。\n\n特点：\n• 简洁的界面设计\n• 支持任务完成状态标记\n• 支持任务筛选查看\n• 数据本地存储安全可靠\n\n当前版本：1.0.0',
+      content: '方便记事本是一款简单易用的待办事项管理工具，帮助您随时记录和管理日常任务。\n\n特点：\n• 简洁的界面设计\n• 支持任务完成状态标记\n• 支持任务筛选查看\n• 数据本地存储安全可靠\n\n',
       showCancel: false,
-      confirmText: '我知道了',
-      success: (res) => {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        }
-      }
+      confirmText: '我知道了'
     })
   },
 
