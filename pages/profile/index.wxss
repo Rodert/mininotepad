@@ -1,28 +1,28 @@
 .container {
-  padding: 30rpx;
-  background: #f6f8fa;
+  padding: 40rpx 30rpx;
+  background: #ffffff;
   min-height: 100vh;
 }
 
 .user-card {
-  background: #fff;
-  border-radius: 10rpx;
-  padding: 30rpx;
-  margin-bottom: 30rpx;
-  box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.1);
+  background: #f8f9fa;
+  border-radius: 16rpx;
+  padding: 40rpx 30rpx;
+  margin-bottom: 40rpx;
   display: flex;
   align-items: center;
 }
 
 .avatar-container {
-  margin-right: 20rpx;
+  margin-right: 30rpx;
 }
 
 .avatar {
   width: 120rpx;
   height: 120rpx;
   border-radius: 60rpx;
-  background: #f0f0f0;
+  background: #e9ecef;
+  border: 4rpx solid #ffffff;
 }
 
 .user-info {
@@ -30,25 +30,26 @@
 }
 
 .username {
-  font-size: 32rpx;
-  color: #333;
-  font-weight: bold;
+  font-size: 36rpx;
+  color: #2c3e50;
+  font-weight: 500;
   display: block;
-  margin-bottom: 8rpx;
+  margin-bottom: 12rpx;
+  letter-spacing: 0.5rpx;
 }
 
 .user-id {
-  font-size: 24rpx;
-  color: #999;
+  font-size: 26rpx;
+  color: #7f8c8d;
   display: block;
+  letter-spacing: 0.5rpx;
 }
 
 .function-list {
-  background: #fff;
-  border-radius: 10rpx;
+  background: #f8f9fa;
+  border-radius: 16rpx;
   overflow: hidden;
-  margin-bottom: 30rpx;
-  box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.1);
+  margin-bottom: 40rpx;
 }
 
 .function-item {
@@ -68,18 +69,20 @@
 }
 
 .function-text {
-  font-size: 28rpx;
-  color: #333;
+  font-size: 30rpx;
+  color: #2c3e50;
+  letter-spacing: 0.5rpx;
 }
 
 .arrow {
-  font-size: 28rpx;
-  color: #999;
+  font-size: 30rpx;
+  color: #95a5a6;
 }
 
 .version-info {
   text-align: center;
-  font-size: 24rpx;
-  color: #999;
-  margin-top: 60rpx;
+  font-size: 26rpx;
+  color: #95a5a6;
+  margin-top: 80rpx;
+  letter-spacing: 0.5rpx;
 }
