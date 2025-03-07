@@ -2,7 +2,7 @@
   <!-- 用户信息卡片 -->
   <view class="user-card" bindtap="{{!isLogin ? 'onTapLogin' : ''}}">
     <view class="avatar-container">
-      <image class="avatar" src="{{isLogin ? userInfo.avatarUrl : '/images/profile.png'}}" />
+      <image class="avatar" src="{{isLogin ? userInfo.avatarUrl : '/images/icon_me.png'}}" />
     </view>
     <view class="user-info">
       <text class="username">{{isLogin ? userInfo.nickName : '点击登录'}}</text>

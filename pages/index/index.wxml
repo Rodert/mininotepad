@@ -1,10 +1,5 @@
 <!--pages/index/index.wxml-->
 <view class="container">
-  <!-- 顶部日期显示 -->
-  <view class="header">
-    <view class="date">{{currentDate}}</view>
-  </view>
-
   <!-- 过滤器 -->
   <view class="filter-section">
     <view class="filter {{filter === 'all' ? 'active' : ''}}" 
@@ -30,13 +25,14 @@
       <view class="todo-item {{item.completed ? 'completed' : ''}}" 
             wx:for="{{filteredTodos}}" 
             wx:key="id">
-        <view class="todo-content" bindtap="toggleTodo" data-id="{{item.id}}">
-          <icon class="checkbox" type="{{item.completed ? 'success' : 'circle'}}" size="18"/>
+        <view class="todo-content" bindtap="goToDetail" data-id="{{item.id}}">
+          <view class="checkbox" catchtap="toggleTodo" data-id="{{item.id}}" class="checkbox {{item.completed ? 'checked' : ''}}"></view>
           <text class="todo-text">{{item.text}}</text>
         </view>
         <view class="todo-actions">
-          <view class="action-btn detail" bindtap="goToDetail" data-id="{{item.id}}">详情</view>
-          <view class="action-btn delete" bindtap="deleteTodo" data-id="{{item.id}}">删除</view>
+          <view class="delete-icon" bindtap="deleteTodo" data-id="{{item.id}}">
+            <icon type="cancel" size="20" color="#ff4d4f"/>
+          </view>
         </view>
       </view>
     </block>

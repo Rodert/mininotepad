@@ -9,16 +9,6 @@
   padding-bottom: 180rpx; /* 为底部输入区域留出空间 */
 }
 
-.header {
-  margin-bottom: 20rpx;
-}
-
-.date {
-  font-size: 32rpx;
-  color: #666;
-  margin-bottom: 20rpx;
-}
-
 .input-section {
   position: fixed;
   left: 0;
@@ -106,6 +96,32 @@
 .checkbox {
   margin-right: 20rpx;
   flex-shrink: 0; /* 防止复选框被压缩 */
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 6rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.checkbox.checked {
+  background: #07C160;
+  border-color: #07C160;
+}
+
+.checkbox.checked::after {
+  content: '';
+  width: 20rpx;
+  height: 10rpx;
+  border: 4rpx solid #fff;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 10rpx;
 }
 
 .todo-text {
@@ -124,9 +140,15 @@
 
 .todo-actions {
   display: flex;
-  gap: 20rpx;
   flex-shrink: 0; /* 防止操作按钮被压缩 */
   margin-left: 20rpx; /* 与文本保持一定距离 */
+}
+
+.delete-icon {
+  padding: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .action-btn {

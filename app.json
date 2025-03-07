@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/calendar/index",
     "pages/detail/index",
     "pages/profile/index"
   ],
@@ -21,6 +22,12 @@
         "text": "列表",
         "iconPath": "images/icon_cate.png",
         "selectedIconPath": "images/icon_cate_HL.png"
+      },
+      {
+        "pagePath": "pages/calendar/index",
+        "text": "日历",
+        "iconPath": "images/icon_graph.png",
+        "selectedIconPath": "images/icon_graph_HL.png"
       },
       {
         "pagePath": "pages/profile/index",

@@ -79,10 +79,14 @@ Page({
       }
       
       console.log('内容检测通过，准备添加待办事项')
+      const now = new Date();
+      const formattedDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+      
       const todo = {
         id: Date.now().toString(),
         text: newTodo.trim(),
         completed: false,
+        date: formattedDate,
         createTime: new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false })
       }
 
@@ -117,6 +121,7 @@ Page({
         id: Date.now().toString(),
         text: newTodo.trim(),
         completed: false,
+        date: formattedDate,
         createTime: new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false })
       }
 

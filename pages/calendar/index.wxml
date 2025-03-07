@@ -1,0 +1,52 @@
+<!--pages/calendar/index.wxml-->
+<view class="container">
+  <view class="calendar-header">
+    <view class="header-btn" bindtap="prevMonth">
+      <text class="arrow">←</text>
+    </view>
+    <view class="current-month">{{year}}年{{month}}月</view>
+    <view class="header-btn" bindtap="nextMonth">
+      <text class="arrow">→</text>
+    </view>
+  </view>
+  
+  <view class="today-btn-container">
+    <view class="today-btn" bindtap="goToToday">今天</view>
+  </view>
+
+  <view class="weekdays">
+    <view class="weekday" wx:for="{{weekdays}}" wx:key="index">{{item}}</view>
+  </view>
+
+  <view class="days">
+    <view class="day-item {{item.currentMonth ? '' : 'other-month'}} {{item.isToday ? 'today' : ''}} {{item.hasTodo ? 'has-todo' : ''}} {{item.fullDate === selectedDate ? 'selected' : ''}}" 
+          wx:for="{{days}}" 
+          wx:key="index"
+          bindtap="selectDate"
+          data-date="{{item.fullDate}}"
+          animation="{{item.animation}}">
+      <view class="day-number">{{item.day}}</view>
+      <view class="todo-indicator" wx:if="{{item.hasTodo}}"></view>
+    </view>
+  </view>
+
+  <view class="daily-todos" wx:if="{{selectedDateTodos.length > 0}}">
+    <view class="daily-header">
+      <text>{{selectedDate}} 待办事项</text>
+    </view>
+    <view class="todo-list">
+      <view class="todo-item {{item.completed ? 'completed' : ''}}" 
+            wx:for="{{selectedDateTodos}}" 
+            wx:key="id">
+        <view class="todo-content" bindtap="goToDetail" data-id="{{item.id}}">
+          <view class="checkbox {{item.completed ? 'checked' : ''}}" catchtap="toggleTodo" data-id="{{item.id}}"></view>
+          <text class="todo-text">{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="empty-tip" wx:else>
+    <text>{{selectedDate}} 暂无待办事项</text>
+  </view>
+</view> 
