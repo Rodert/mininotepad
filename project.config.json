@@ -5,14 +5,15 @@
     "minified": true,
     "uglifyFileName": false,
     "enhance": true,
-    "packNpmRelationList": [],
+    "useCompilerPlugins": false,
+    "minifyWXML": true,
+    "useNewFeatures": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
-    "useCompilerPlugins": false,
-    "minifyWXML": true
+    "packNpmRelationList": []
   },
   "compileType": "miniprogram",
   "simulatorPluginLibVersion": {},
@@ -21,5 +22,9 @@
     "include": []
   },
   "appid": "wx374e7d3ba8a6671a",
-  "editorSetting": {}
+  "editorSetting": {},
+  "cloudfunctionRoot": "cloudfunctions/",
+  "miniprogramRoot": "",
+  "cloud": true,
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
 }

@@ -2,41 +2,55 @@
 <view class="container">
   <!-- 顶部日期显示 -->
   <view class="header">
-    <text class="date-display">{{currentDate}}</text>
+    <view class="date">{{currentDate}}</view>
   </view>
 
   <!-- 过滤器 -->
-  <view class="filter">
-    <text class="{{filter === 'all' ? 'active' : ''}}" bindtap="setFilter" data-type="all">全部</text>
-    <text class="{{filter === 'active' ? 'active' : ''}}" bindtap="setFilter" data-type="active">未完成</text>
-    <text class="{{filter === 'completed' ? 'active' : ''}}" bindtap="setFilter" data-type="completed">已完成</text>
+  <view class="filter-section">
+    <view class="filter {{filter === 'all' ? 'active' : ''}}" 
+          bindtap="setFilter" 
+          data-type="all">
+      全部 ({{todos.length}})
+    </view>
+    <view class="filter {{filter === 'active' ? 'active' : ''}}" 
+          bindtap="setFilter" 
+          data-type="active">
+      待完成 ({{activeCount}})
+    </view>
+    <view class="filter {{filter === 'completed' ? 'active' : ''}}" 
+          bindtap="setFilter" 
+          data-type="completed">
+      已完成 ({{completedCount}})
+    </view>
   </view>
 
   <!-- 待办列表 -->
-  <view class="todo-list">
-    <block wx:for="{{filteredTodos}}" wx:key="id">
-      <view class="todo-item">
-        <view class="todo-content" bindtap="goToDetail" data-id="{{item.id}}">
-          <checkbox checked="{{item.completed}}" catchtap="toggleTodo" data-id="{{item.id}}" />
-          <view class="todo-info">
-            <text class="todo-text {{item.completed ? 'completed' : ''}}">{{item.text}}</text>
-            <text class="todo-date" wx:if="{{item.dueDate}}">截止: {{item.dueDate}}</text>
-          </view>
+  <scroll-view class="todo-list" scroll-y="true">
+    <block wx:if="{{filteredTodos.length > 0}}">
+      <view class="todo-item {{item.completed ? 'completed' : ''}}" 
+            wx:for="{{filteredTodos}}" 
+            wx:key="id">
+        <view class="todo-content" bindtap="toggleTodo" data-id="{{item.id}}">
+          <icon class="checkbox" type="{{item.completed ? 'success' : 'circle'}}" size="18"/>
+          <text class="todo-text">{{item.text}}</text>
         </view>
-        <text class="delete-btn" bindtap="deleteTodo" data-id="{{item.id}}">🗑️</text>
+        <view class="todo-actions">
+          <view class="action-btn detail" bindtap="goToDetail" data-id="{{item.id}}">详情</view>
+          <view class="action-btn delete" bindtap="deleteTodo" data-id="{{item.id}}">删除</view>
+        </view>
       </view>
     </block>
-  </view>
+    <view wx:else class="empty-tip">暂无待办事项</view>
+  </scroll-view>
 
-  <!-- 统计信息 -->
-  <view class="statistics">
-    <text>总计: {{todos.length}} | 已完成: {{completedCount}} | 未完成: {{activeCount}}</text>
-  </view>
-
-  <!-- 添加待办区域 -->
-  <view class="input-area">
-    <view class="input-row">
-      <input class="todo-input" placeholder="请输入待办事项" value="{{newTodo}}" bindinput="onInput" bindconfirm="addTodo"/>
+  <!-- 底部输入区域 -->
+  <view class="input-section">
+    <view class="input-wrapper">
+      <input class="todo-input" 
+             placeholder="输入待办事项" 
+             value="{{newTodo}}" 
+             bindinput="onInput"
+             bindconfirm="addTodo"/>
       <button class="add-btn" bindtap="addTodo">添加</button>
     </view>
   </view>

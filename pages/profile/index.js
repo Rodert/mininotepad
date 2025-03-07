@@ -8,6 +8,40 @@ Page({
     showFeedback: false
   },
 
+  // 添加内容安全检测函数
+  async checkContentSecurity(content) {
+    try {
+      const result = await wx.security.msgSecCheck({
+        content: content,
+        version: 2,
+        scene: 2
+      }).catch(async (error) => {
+        console.error('内容安全检测失败:', error)
+        // 如果是 API 调用失败，返回通过
+        return { result: { suggest: 'pass' } }
+      })
+
+      // 检查结果
+      if (result.result && result.result.suggest === 'risky') {
+        wx.showModal({
+          title: '内容提醒',
+          content: '输入内容可能包含敏感信息，请修改后重试',
+          showCancel: false
+        })
+        return false
+      }
+      return true
+    } catch (error) {
+      console.error('内容检测失败:', error)
+      wx.showToast({
+        title: '内容检测失败',
+        icon: 'error'
+      })
+      // 如果检测失败，默认允许通过
+      return true
+    }
+  },
+
   onLoad() {
     // 检查本地存储中的登录状态和用户信息
     this.checkLoginStatus()

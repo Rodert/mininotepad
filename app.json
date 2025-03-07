@@ -37,5 +37,13 @@
       "version": "1.4.3",
       "provider": "wx104a1a20c3f81ec2"
     }
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "darkmode": true,
+  "themeLocation": "theme.json",
+  "permission": {
+    "scope.userInfo": {
+      "desc": "你的用户信息将用于小程序用户数据的展示"
+    }
   }
 }
