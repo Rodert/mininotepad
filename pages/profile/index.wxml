@@ -12,6 +12,12 @@
 
   <!-- 功能列表 -->
   <view class="function-list">
+    <view class="function-item" bindtap="exportToTxt">
+      <view class="function-content">
+        <text class="function-text">一键导出数据</text>
+        <text class="arrow">></text>
+      </view>
+    </view>
     <view class="function-item" bindtap="onTapClearData">
       <view class="function-content">
         <text class="function-text">清空数据</text>

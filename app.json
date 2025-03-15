@@ -54,6 +54,9 @@
     },
     "scope.writePhotosAlbum": {
       "desc": "用于保存笔记卡片到相册"
+    },
+    "scope.writeFile": {
+      "desc": "用于导出待办事项到文件"
     }
   }
 }

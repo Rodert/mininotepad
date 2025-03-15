@@ -209,5 +209,65 @@ Page({
     this.setData({
       showFeedback: false
     })
+  },
+
+  exportToTxt() {
+    const todos = wx.getStorageSync('todos') || []
+    if (todos.length === 0) {
+      wx.showToast({
+        title: '没有待办事项',
+        icon: 'none'
+      })
+      return
+    }
+
+    // 生成文本内容
+    let content = '方便记事本 - 待办事项列表\n\n'
+    content += '导出时间：' + new Date().toLocaleString() + '\n\n'
+
+    todos.forEach((todo, index) => {
+      content += `${index + 1}. ${todo.text}\n`
+      content += `   状态：${todo.completed ? '已完成' : '未完成'}\n`
+      content += `   创建时间：${new Date(todo.createTime).toLocaleString()}\n`
+      if (todo.note) {
+        content += `   备注：${todo.note}\n`
+      }
+      content += '\n'
+    })
+
+    // 生成文件名
+    const fileName = `待办事项_${new Date().getTime()}.txt`
+    
+    // 将内容写入文件系统
+    const fs = wx.getFileSystemManager()
+    const filePath = `${wx.env.USER_DATA_PATH}/${fileName}`
+    
+    try {
+      fs.writeFileSync(filePath, content, 'utf8')
+      
+      // 保存文件到手机
+      wx.shareFileMessage({
+        filePath: filePath,
+        success: () => {
+          wx.showToast({
+            title: '导出成功',
+            icon: 'success'
+          })
+        },
+        fail: (err) => {
+          console.error('导出失败', err)
+          wx.showToast({
+            title: '导出失败',
+            icon: 'none'
+          })
+        }
+      })
+    } catch (err) {
+      console.error('写入文件失败', err)
+      wx.showToast({
+        title: '导出失败',
+        icon: 'none'
+      })
+    }
   }
 })
