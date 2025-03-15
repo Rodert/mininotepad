@@ -1,4 +1,12 @@
-# Mini Notepad - 微信小程序记事本
+<!--
+ * @Author: JavaPub
+ * @Date: 2025-03-06 12:46:30
+ * @LastEditors: your name
+ * @LastEditTime: 2025-03-15 16:49:22
+ * @Description: Here is the JavaPub code base. Search JavaPub on the whole web.
+ * @FilePath: /mininotepad/README.md
+-->
+# 方便记事本 - 微信小程序记事本
 
 一个简洁实用的微信小程序记事本，帮助用户随时记录和管理待办事项。
 
@@ -76,3 +84,8 @@ mininotepad/
 - [ ] 支持数据云同步
 - [ ] 优化界面设计
 - [ ] 添加数据统计功能
+
+### 2024-03-15 (v1.0.3 功能扩展)
+- 规划知识卡片功能
+- 设计任务详情页的卡片生成功能
+- 实现将任务信息转换为精美卡片图片并保存到相册

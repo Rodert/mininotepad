@@ -7,9 +7,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#07C160",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "方便记事本",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#999999",
@@ -51,6 +51,9 @@
   "permission": {
     "scope.userInfo": {
       "desc": "你的用户信息将用于小程序用户数据的展示"
+    },
+    "scope.writePhotosAlbum": {
+      "desc": "用于保存笔记卡片到相册"
     }
   }
 }

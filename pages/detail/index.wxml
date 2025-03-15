@@ -1,20 +1,24 @@
 <view class="container">
-  <!-- 任务详情区域 -->
-  <view class="detail-section">
+  <!-- 任务详情卡片 -->
+  <view class="card detail-section">
     <view class="detail-title">任务详情</view>
     <view class="todo-text">{{todo.text}}</view>
     <view class="todo-info">
-      <text class="label">状态：</text>
-      <text>{{todo.completed ? '已完成' : '未完成'}}</text>
-    </view>
-    <view class="todo-info">
-      <text class="label">创建时间：</text>
-      <text>{{todo.createTime}}</text>
+      <view class="info-item">
+        <text class="label">状态</text>
+        <text class="status-tag {{todo.completed ? 'completed' : 'pending'}}">
+          {{todo.completed ? '已完成' : '未完成'}}
+        </text>
+      </view>
+      <view class="info-item">
+        <text class="label">创建时间</text>
+        <text class="value">{{todo.createTime}}</text>
+      </view>
     </view>
   </view>
 
-  <!-- 备注区域 -->
-  <view class="note-section">
+  <!-- 备注卡片 -->
+  <view class="card note-section">
     <view class="note-title">备注</view>
     <textarea
       class="note-input"
@@ -24,9 +28,20 @@
     />
   </view>
 
-  <!-- 底部按钮区域 -->
-  <view class="button-group">
-    <button class="save-btn" bindtap="saveNote">保存备注</button>
-    <button class="back-btn" bindtap="goBack">返回</button>
+  <!-- 操作按钮区域 -->
+  <view class="action-area">
+    <!-- 主要操作按钮 -->
+    <view class="primary-actions">
+      <button class="primary-btn save-btn" bindtap="saveNote">
+        <text class="btn-icon">📝</text>
+        <text>保存备注</text>
+      </button>
+    </view>
+    
+    <!-- 返回按钮 -->
+    <button class="secondary-btn" bindtap="goBack">
+      <text class="btn-icon">👈</text>
+      <text>返回列表</text>
+    </button>
   </view>
 </view>
