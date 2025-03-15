@@ -2,7 +2,11 @@
   <!-- 任务详情卡片 -->
   <view class="card detail-section">
     <view class="detail-title">任务详情</view>
-    <view class="todo-text">{{todo.text}}</view>
+    <textarea
+      class="todo-input"
+      value="{{todo.text}}"
+      bindinput="onTodoInput"
+    />
     <view class="todo-info">
       <view class="info-item">
         <text class="label">状态</text>

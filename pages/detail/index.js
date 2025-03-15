@@ -15,6 +15,12 @@ Page({
     }
   },
 
+  onTodoInput(e) {
+    this.setData({
+      'todo.text': e.detail.value
+    })
+  },
+
   onNoteInput(e) {
     this.setData({
       note: e.detail.value
@@ -28,6 +34,7 @@ Page({
     if (index > -1) {
       todos[index] = {
         ...todos[index],
+        text: this.data.todo.text,
         note: this.data.note
       }
       
