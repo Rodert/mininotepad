@@ -28,12 +28,14 @@
 }
 
 .todo-input {
-  flex: 3; /* 占据3份宽度 */
+  flex: 3;
   height: 80rpx;
   padding: 0 20rpx;
   border: 2rpx solid #e0e0e0;
   border-radius: 8rpx;
   font-size: 28rpx;
+  color: #333333;
+  background: #ffffff;
 }
 
 .add-btn {
@@ -77,20 +79,20 @@
 
 .todo-item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20rpx;
+  align-items: flex-start;
+  padding: 0 30rpx;
   background: #fff;
-  margin-bottom: 20rpx;
-  border-radius: 12rpx;
-  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rpx;
+  position: relative;
+  min-height: 88rpx;
 }
 
 .todo-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex: 1;
-  min-width: 0; /* 确保 flex 子元素可以正确收缩 */
+  min-height: 88rpx;
+  padding: 20rpx 0;
 }
 
 .checkbox {
@@ -125,16 +127,19 @@
 }
 
 .todo-text {
+  flex: 1;
   font-size: 28rpx;
-  color: #333;
-  white-space: nowrap; /* 文本不换行 */
-  overflow: hidden; /* 超出部分隐藏 */
-  text-overflow: ellipsis; /* 显示省略号 */
-  flex: 1; /* 占据剩余空间 */
+  color: #333333 !important;
+  line-height: 1.4;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  padding-right: 20rpx;
+  background: transparent;
 }
 
 .todo-item.completed .todo-text {
-  color: #999;
+  color: #999999 !important;
   text-decoration: line-through;
 }
 

@@ -27,10 +27,11 @@
 
 .todo-text {
   font-size: 30rpx;
-  color: #333;
+  color: #333333 !important;
   line-height: 1.6;
   margin-bottom: 24rpx;
   word-wrap: break-word;
+  background: transparent;
 }
 
 .todo-info {
@@ -50,15 +51,21 @@
 }
 
 .label {
-  color: #666;
+  color: #666666 !important;
   font-size: 28rpx;
   margin-right: 20rpx;
   min-width: 112rpx;
+  background: transparent;
 }
 
 .value {
-  color: #333;
+  color: #333333 !important;
   font-size: 28rpx;
+  flex: 1;
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 1.6;
+  background: transparent;
 }
 
 /* 状态标签样式 */
@@ -88,7 +95,11 @@
   border-radius: 12rpx;
   font-size: 28rpx;
   line-height: 1.6;
-  background: #fafafa;
+  background: #ffffff;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  color: #333333 !important;
 }
 
 /* 操作区域样式 */
@@ -150,6 +161,10 @@
   border-radius: 12rpx;
   font-size: 30rpx;
   line-height: 1.6;
-  background: #fafafa;
+  background: #ffffff;
   margin-bottom: 24rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  color: #333333 !important;
 }
