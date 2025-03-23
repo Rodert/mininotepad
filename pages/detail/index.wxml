@@ -14,6 +14,16 @@
           {{todo.completed ? '已完成' : '未完成'}}
         </text>
       </view>
+      <!-- 任务日期选择器 -->
+      <view class="info-item date-selector">
+        <text class="label">任务日期</text>
+        <picker mode="date" value="{{todo.date}}" start="2020-01-01" end="2030-12-31" bindchange="onDateChange">
+          <view class="picker-view">
+            <text class="value">{{todo.date}}</text>
+            <text class="picker-icon">▼</text>
+          </view>
+        </picker>
+      </view>
       <view class="info-item">
         <text class="label">创建时间</text>
         <text class="value">{{todo.createTime}}</text>
@@ -48,4 +58,4 @@
       <text>返回列表</text>
     </button>
   </view>
-</view>
+</view> 

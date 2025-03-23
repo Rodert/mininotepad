@@ -168,3 +168,20 @@
   white-space: pre-wrap;
   color: #333333 !important;
 }
+
+/* 日期选择器样式 */
+.date-selector {
+  margin: 10rpx 0;
+}
+
+.picker-view {
+  display: flex;
+  align-items: center;
+  padding: 8rpx 0;
+}
+
+.picker-icon {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 10rpx;
+}

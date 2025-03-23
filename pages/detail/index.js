@@ -27,6 +27,12 @@ Page({
     })
   },
 
+  onDateChange(e) {
+    this.setData({
+      'todo.date': e.detail.value
+    })
+  },
+
   saveNote() {
     const todos = wx.getStorageSync('todos') || []
     const index = todos.findIndex(t => t.id === this.data.todo.id)
@@ -35,7 +41,8 @@ Page({
       todos[index] = {
         ...todos[index],
         text: this.data.todo.text,
-        note: this.data.note
+        note: this.data.note,
+        date: this.data.todo.date
       }
       
       wx.setStorageSync('todos', todos)
