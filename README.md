@@ -50,6 +50,8 @@ mininotepad/
 
 ![日历页面](https://javapub-common-oss.oss-cn-beijing.aliyuncs.com/javapub/202503061417681.png)
 
+图片好像有问题
+
 ## 开发日志
 
 ### 2024-03-06 (v1.0.0 初始版本)
